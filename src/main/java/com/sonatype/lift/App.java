@@ -30,4 +30,15 @@ public class App
       return Objects.hash(a);
     }
   }
+
+  static class Data2
+  {
+    private int a;
+
+    @Override
+    public boolean equals(Object other) {
+      Data2 that = (Data2) other; // BAD: This may throw ClassCastException.
+      return a == that.a;
+    }
+  }
 }
