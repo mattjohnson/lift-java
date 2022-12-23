@@ -1,5 +1,7 @@
 package com.sonatype.lift;
 
+import java.util.Objects;
+
 /**
  * Hello world!
  */
@@ -21,6 +23,11 @@ public class App
     public boolean equals(Object other) {
       if (!(other instanceof Data1)) { return false; }Data1 that = (Data1) other;
       return a == that.a;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(a);
     }
   }
 }
